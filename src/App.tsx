@@ -5,7 +5,7 @@ import '@fontsource/roboto/700.css';
 
 import { Header } from './Header';
 
-function App() {
+function App({ history, user }: { history: string[], user?: { permissions: string[] } }) {
   return (
     <div className='App'>
       <Header />
