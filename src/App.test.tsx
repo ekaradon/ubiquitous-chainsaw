@@ -59,11 +59,7 @@ describe('Router', () => {
                 location='/admin/users/edit'
                 user={{
                     ...ADMIN_USER,
-                    permissions: [
-                        ...ADMIN_USER.permissions,
-                        'readUsers',
-                        'editUsers',
-                    ],
+                    permissions: [...ADMIN_USER.permissions, 'readUsers', 'editUsers'],
                 }}
             />
         )
@@ -91,11 +87,7 @@ describe('Router', () => {
                 location='/admin/roles/edit'
                 user={{
                     ...ADMIN_USER,
-                    permissions: [
-                        ...ADMIN_USER.permissions,
-                        'readRoles',
-                        'editRoles',
-                    ],
+                    permissions: [...ADMIN_USER.permissions, 'readRoles', 'editRoles'],
                 }}
             />
         )

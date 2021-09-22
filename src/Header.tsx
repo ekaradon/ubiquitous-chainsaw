@@ -93,11 +93,7 @@ function Header() {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography
-                        variant='h6'
-                        noWrap
-                        component='div'
-                    >
+                    <Typography variant='h6' noWrap component='div'>
                         Router
                     </Typography>
                     <Box sx={{ flexGrow: 1 }} />

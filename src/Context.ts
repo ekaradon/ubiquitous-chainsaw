@@ -12,10 +12,7 @@ function createStrictContext<T>(
     function useStrictContext() {
         const context = useContext(Context)
         if (context === undefined) {
-            throw new Error(
-                options.errorMessage ||
-                    `${options.name} Context Provider is missing`
-            )
+            throw new Error(options.errorMessage || `${options.name} Context Provider is missing`)
         }
         return context
     }

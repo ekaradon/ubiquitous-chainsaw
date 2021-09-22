@@ -12,11 +12,8 @@ function isNotEmpty(string: string) {
 }
 
 function Route({ component: Component, exact, to }: RouteProps) {
-    const { history, location } = useRouter()
-    const locationWithoutLeadingSlash = location
-        .split('/')
-        .filter(isNotEmpty)
-        .join('/')
+    const { location, setLocation } = useRouter()
+    const locationWithoutLeadingSlash = location.split('/').filter(isNotEmpty).join('/')
 
     if (locationWithoutLeadingSlash.slice(0, to.length) !== to) {
         return null
