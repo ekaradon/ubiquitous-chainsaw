@@ -1,5 +1,5 @@
 import { ReactElement } from 'react'
-import { RouterProvider, useRouter } from './Router'
+import { RouterProvider, useRouter } from './Router.context'
 
 type RouteProps = {
     component: () => ReactElement
@@ -26,7 +26,7 @@ function Route({ component: Component, exact, to }: RouteProps) {
     }
 
     return (
-        <RouterProvider value={{ history, location: `/${newLocation}` }}>
+        <RouterProvider value={{ location: `/${newLocation}`, setLocation }}>
             <Component />
         </RouterProvider>
     )

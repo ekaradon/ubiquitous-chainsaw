@@ -10,6 +10,8 @@ import Button from '@mui/material/Button'
 import MenuIcon from '@mui/icons-material/Menu'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 
+import { Link } from './Link'
+
 function Header() {
     const [auth, setAuth] = useState<boolean>(true)
     const [userMenuAnchor, setUserMenuAnchor] = useState<null | HTMLElement>(null)
@@ -74,9 +76,15 @@ function Header() {
             open={isAppMenuOpen}
             onClose={handleMenuClose}
         >
-            <MenuItem>Home</MenuItem>
-            <MenuItem>Dashboard</MenuItem>
-            <MenuItem>Admin</MenuItem>
+            <Link to='/'>
+                <MenuItem>Home</MenuItem>
+            </Link>
+            <Link to='/dashboard'>
+                <MenuItem>Dashboard</MenuItem>
+            </Link>
+            <Link to='/admin'>
+                <MenuItem>Admin</MenuItem>
+            </Link>
         </Menu>
     )
 
@@ -111,7 +119,9 @@ function Header() {
                                 <AccountCircle />
                             </IconButton>
                         ) : (
-                            <Button color='inherit'>Login</Button>
+                            <Link to='/login'>
+                                <Button color='inherit'>Login</Button>
+                            </Link>
                         )}
                     </Box>
                 </Toolbar>
