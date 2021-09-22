@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
     <React.StrictMode>
-        <App history={[]} />
+        <App location={window.location.pathname} />
     </React.StrictMode>,
     document.getElementById('root')
 )
