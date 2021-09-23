@@ -4,11 +4,12 @@ import { ReactElement } from 'react'
 import { useAuth } from './Auth.context'
 import { Redirect } from './Redirect'
 import { RouterProvider, useRouter } from './Router.context'
+import { Permission } from './User'
 
 type RouteProps = {
     component: () => ReactElement
     exact?: boolean
-    permissions?: string[]
+    permissions?: Permission[]
     to: string
 }
 

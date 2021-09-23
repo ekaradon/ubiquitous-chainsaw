@@ -1,5 +1,7 @@
+type Permission = 'isLogged' | 'readDashboard' | 'isAdmin' | 'readUsers' | 'editUsers' | 'readRoles' | 'editRoles'
+
 type User = {
-    permissions: string[]
+    permissions: Permission[]
 }
 
 const GUEST: User = {
@@ -23,5 +25,5 @@ const SUPER_ADMIN: User = {
 }
 
 
-export type { User }
+export type { User, Permission }
 export { GUEST, END_USER, ADMIN, READONLY_ADMIN, SUPER_ADMIN }
