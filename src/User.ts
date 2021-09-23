@@ -15,7 +15,7 @@ const ADMIN: User = {
 }
 
 const READONLY_ADMIN: User = {
-    permissions: [...ADMIN.permissions, 'readUsers', 'editUsers'],
+    permissions: [...ADMIN.permissions, 'readUsers', 'readRoles'],
 }
 
 const SUPER_ADMIN: User = {
