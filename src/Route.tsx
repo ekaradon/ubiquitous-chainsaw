@@ -38,7 +38,7 @@ function Route({ component: Component, exact, to, permissions }: RouteProps) {
 
     if (!permissions || permissions.every((permission) => user?.permissions.includes(permission))) {
         return (
-            <RouterProvider value={{ location: `/${newLocation}`, setLocation }}>
+            <RouterProvider value={{ location: newLocation, setUrl }}>
                 <Component />
             </RouterProvider>
         )
