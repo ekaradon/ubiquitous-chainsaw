@@ -9,8 +9,8 @@ function Admin() {
     return (
         <Fragment>
             <Typography variant='h2'>admin</Typography>
-            <Route to='users' component={AdminUsers} />
-            <Route to='roles' component={AdminRoles} />
+            <Route to='users' component={AdminUsers} permissions={['readUsers']} />
+            <Route to='roles' component={AdminRoles} permissions={['readRoles']} />
         </Fragment>
     )
 }

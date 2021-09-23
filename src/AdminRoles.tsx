@@ -18,7 +18,7 @@ function AdminRoles() {
         <Fragment>
             <Route exact to='' component={AdminRolesLandingPage} />
             <Route to='list' component={AdminRolesList} />
-            <Route to='edit' component={AdminRolesEdit} />
+            <Route to='edit' component={AdminRolesEdit} permissions={['editRoles']} />
         </Fragment>
     )
 }
