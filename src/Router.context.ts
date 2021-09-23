@@ -1,8 +1,9 @@
+import { Dispatch, SetStateAction } from 'react'
 import { createStrictContext } from './Context'
 
 type RouterContext = {
     location: string
-    setUrl: (newLocation: string) => void
+    setLocation: Dispatch<SetStateAction<string>>
 }
 
 const [RouterProvider, useRouter] = createStrictContext<RouterContext>({

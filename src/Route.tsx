@@ -18,7 +18,7 @@ function isNotEmpty(string: string) {
 }
 
 function Route({ component: Component, exact, to, permissions }: RouteProps) {
-    const { location, setUrl } = useRouter()
+    const { location, setLocation } = useRouter()
     const { user } = useAuth()
     const locationWithoutLeadingSlash = location.split('/').filter(isNotEmpty).join('/')
 
@@ -38,7 +38,7 @@ function Route({ component: Component, exact, to, permissions }: RouteProps) {
 
     if (!permissions || permissions.every((permission) => user?.permissions.includes(permission))) {
         return (
-            <RouterProvider value={{ location: newLocation, setUrl }}>
+            <RouterProvider value={{ location: newLocation, setLocation }}>
                 <Component />
             </RouterProvider>
         )
