@@ -11,9 +11,10 @@ import MenuIcon from '@mui/icons-material/Menu'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 
 import { Link } from './Link'
+import { useAuth } from './Auth.context'
 
 function Header() {
-    const [auth, setAuth] = useState<boolean>(true)
+    const { user, setUser } = useAuth()
     const [userMenuAnchor, setUserMenuAnchor] = useState<null | HTMLElement>(null)
     const [appMenuAnchor, setAppMenuAnchor] = useState<null | HTMLElement>(null)
 
@@ -35,7 +36,7 @@ function Header() {
 
     const handleLogout = () => {
         handleMenuClose()
-        setAuth(false)
+        setUser(null)
     }
 
     const menuUserId = 'menuUserId'
@@ -106,7 +107,7 @@ function Header() {
                     </Typography>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box>
-                        {auth ? (
+                        {user ? (
                             <IconButton
                                 size='large'
                                 edge='end'

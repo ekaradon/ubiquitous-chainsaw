@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useState } from 'react'
 import { RouterProvider } from './Router.context'
 
 type RouterProps = {
@@ -8,6 +8,11 @@ type RouterProps = {
 
 function Router({ children, initialLocation }: RouterProps) {
     const [location, setLocation] = useState<string>(initialLocation)
+
+    const setUrl = useCallback((newLocation: string) => {
+        window.history.pushState({ newLocation }, '', newLocation)
+        setLocation(newLocation)
+    }, [])
 
     useEffect(() => {
         function listenToPopState() {
@@ -19,7 +24,7 @@ function Router({ children, initialLocation }: RouterProps) {
         return () => void window.removeEventListener('popstate', listenToPopState)
     })
 
-    return <RouterProvider value={{ location, setLocation }}>{children}</RouterProvider>
+    return <RouterProvider value={{ location, setUrl }}>{children}</RouterProvider>
 }
 
 export { Router }

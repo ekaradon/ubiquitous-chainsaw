@@ -6,12 +6,12 @@ type RedirectProps = {
 }
 
 function Redirect({ to }: RedirectProps) {
-    const { setLocation } = useRouter()
+    const { location, setUrl } = useRouter()
 
     // do we want to keep redirect in history?
     useEffect(() => {
-        setLocation(to)
-    }, [to, setLocation])
+        setUrl(to)
+    }, [location, setUrl, to])
 
     return null
 }

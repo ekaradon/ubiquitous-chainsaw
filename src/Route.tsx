@@ -18,7 +18,7 @@ function isNotEmpty(string: string) {
 }
 
 function Route({ component: Component, exact, to, permissions }: RouteProps) {
-    const { location, setLocation } = useRouter()
+    const { location, setUrl } = useRouter()
     const { user } = useAuth()
     const locationWithoutLeadingSlash = location.split('/').filter(isNotEmpty).join('/')
 

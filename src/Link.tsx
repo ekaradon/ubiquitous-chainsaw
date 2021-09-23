@@ -7,11 +7,10 @@ type LinkProps = {
 }
 
 function Link({ to, children }: LinkProps) {
-    const { location, setLocation } = useRouter()
+    const { location, setUrl } = useRouter()
     function goToLocation() {
         const newLocation = to.startsWith('/') ? to : `${location}/${to}`
-        window.history.pushState({ from: location, to }, '', newLocation)
-        setLocation(newLocation)
+        setUrl(newLocation)
     }
 
     return <span onClick={goToLocation}>{children}</span>
